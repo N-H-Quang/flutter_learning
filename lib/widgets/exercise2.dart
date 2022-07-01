@@ -44,7 +44,10 @@ class Exercise2 extends StatelessWidget {
                   child: Container(
                     height: MediaQuery.of(context).size.height,
                     child: ListView(children: <Widget>[
-                      itemWhoMessage()
+                      itemWhoMessage(name: 'Herman Pope', message: "Hey! How's it going?", time: '04:04AM', avatar: "assets/images/avatar.png", countMessage: 6),
+                      itemWhoMessage(name: 'Herman Pope', message: "Hey! How's it going?", time: '04:04AM', avatar: "assets/images/avatar.png", countMessage: 6),
+                      itemWhoMessage(name: 'Herman Pope', message: "Hey! How's it going?", time: '04:04AM', avatar: "assets/images/avatar.png", countMessage: 6),
+                      itemWhoMessage(name: 'Herman Pope', message: "Hey! How's it going?", time: '04:04AM', avatar: "assets/images/avatar.png", countMessage: 6),
                     ]),
                   )),
             ),
