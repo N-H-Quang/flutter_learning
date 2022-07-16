@@ -91,7 +91,6 @@ class _Exercise2State extends State<Exercise2> {
           SliverToBoxAdapter(
             child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
-
                  child: Container(
                   height: MediaQuery.of(context).size.height - 168 - 95,
                   child: ListView.builder(padding: EdgeInsets.zero,

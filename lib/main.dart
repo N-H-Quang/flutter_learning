@@ -1,5 +1,8 @@
+import 'package:ex_day_2/modules/exercise4/stage_of_listview_page.dart';
+import 'package:ex_day_2/widgets/exercise4.dart';
 import 'package:ex_day_2/widgets/exercise1.dart';
 import 'package:ex_day_2/widgets/exercise2.dart';
+import 'package:ex_day_2/widgets/exercise3.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,6 +17,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         title: 'Flutter Demo',
+        initialRoute: '/',
+        routes: <String, WidgetBuilder>{
+          '/exercise1': (context) => const Exercise1(),
+          '/exercise2': (context) => Exercise2(),
+          '/exercise3': (context) => Exercise3(),
+          '/exercise4': (context) => Exercise4(),
+        },
         theme: ThemeData(
           // This is the theme of your application.
           //
@@ -40,22 +50,20 @@ class HomeScreen extends StatelessWidget {
           title: Center(child: const Text('All Widgets')),
         ),
         body: Column(children: [
-          Center(
-            child: TextButton(
-                child: Text('Day 1 Exercise'),
-                onPressed: () {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => Exercise1()));
-                }),
-          ),
-          Center(
-            child: TextButton(
-                child: Text('Day 2 Exercise'),
-                onPressed: () {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => Exercise2()));
-                }),
-          )
+          _ExerciseLinkButton(context, 'Exercise 1', '/exercise1'),
+          _ExerciseLinkButton(context, 'Exercise 2', '/exercise2'),
+          _ExerciseLinkButton(context, 'Exercise 3', '/exercise3'),
+          _ExerciseLinkButton(context, 'Exercise 4', '/exercise4'),
         ]));
   }
+}
+
+Widget _ExerciseLinkButton(BuildContext context, String title, String route) {
+  return Center(
+    child: TextButton(
+        child: Text(title),
+        onPressed: () {
+          Navigator.pushNamed(context, route);
+        }),
+  );
 }
